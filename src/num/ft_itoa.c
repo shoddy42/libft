@@ -6,11 +6,11 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 21:46:59 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 18:37:06 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/13 23:02:19 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 static size_t	ft_numlen(long n)
 {

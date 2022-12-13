@@ -6,7 +6,7 @@
 /*   By: wkonings <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/01 21:01:46 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 18:37:06 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/13 23:02:29 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // 	return (0);
 // }
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 /**
  * @brief	Turns a string into an integer.

@@ -6,12 +6,20 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/05 17:20:38 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 22:47:33 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 00:06:52 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief Compares two strings character by character.
+ * 		  Returns the first character (casted to int) that differs.
+ * 
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @return The first different character. Returns 0 if strings are identical.
+ */
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	*str1;

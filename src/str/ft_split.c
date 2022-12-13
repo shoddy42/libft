@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 21:22:56 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 22:47:33 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 00:06:07 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,15 @@ static char	*next_str(char const *s, char c)
 	return ((char *)s);
 }
 
+/**
+ * @brief Will split a string in substrings.
+ * 		  Splits the given string on delimiter @b [c]
+ * 		  If there are multiple delimiters in a row, it will skip them.
+ * 
+ * @param s The string to be split.
+ * @param c The delimiter to split on.
+ * @returns An allocated @b [char **] containing all the substrings.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**split;

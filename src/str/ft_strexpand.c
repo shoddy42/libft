@@ -6,12 +6,20 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/15 03:34:09 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 22:47:33 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 00:07:15 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief Similar to ft_strjoin,
+ * 		  Will string join @b [str] and @b [expand]. Then frees @b [str].
+ * 
+ * @param str		The first part of the string. (Will be freed).
+ * @param expand 	The second string to append to @b [str].
+ * @return A newly allocated joined version of @b [str] + @b [expand].
+ */
 char	*ft_strexpand(char *str, char const *expand)
 {
 	char	*s;

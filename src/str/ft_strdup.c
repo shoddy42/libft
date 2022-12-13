@@ -6,12 +6,18 @@
 /*   By: wkonings <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/01 20:48:00 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 22:47:33 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 00:07:03 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief Duplicates a given string.
+ * 
+ * @param s1 The string to be duplicated.
+ * @return An allocated copy of the given string. NULL if allocation fails. 
+ */
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;

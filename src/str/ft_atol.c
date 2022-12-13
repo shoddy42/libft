@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_atol.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: wkonings <marvin@codam.nl>                   +#+                     */
+/*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/04/01 21:01:46 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:27:14 by wkonings      ########   odam.nl         */
+/*   Created: 2022/12/13 23:27:39 by wkonings      #+#    #+#                 */
+/*   Updated: 2022/12/13 23:28:07 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
 /**
- * @brief	Turns a string into an integer.
+ * @brief	Turns a string into a long integer.
  * 			Will skip initial whitespace defined by ft_isspace.
  * 			Then accepts one occurance of '+' or '-', followed by numbers.
  * 			Remaining input will be ignored.
  * 
- * @param nb The string to be turned to number
- * @returns a long casted to an int.
+ * @param nb	The string to be turned to number
+ * @returns		a long.
  */
-int	ft_atoi(const char *nb)
+long	ft_atol(const char *nb)
 {
 	int				i;
 	unsigned long	r;
@@ -41,5 +41,5 @@ int	ft_atoi(const char *nb)
 		r = (r * 10) + (nb[i] - '0');
 		i++;
 	}
-	return ((int)(r * sign));
+	return ((r * sign));
 }

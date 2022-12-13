@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 11:04:11 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/11/24 19:16:07 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/13 23:34:44 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdbool.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -76,5 +77,10 @@ bool	ft_charinstr(char c, const char *str);
 char	*ft_strexpand(char *str, char const *expand);
 char	*ft_strclean(const char *s, const char *remove);
 bool	ft_strcontains(char *s, char *delims);
+int		ft_numlen(long n);
+long	ft_atol(const char *nb);
+size_t	ft_numlen_base_unsigned(unsigned long n, int base);
+size_t	ft_numlen_base(long n, int base);
+int		ft_printf(const char *format, ...);
 
 #endif

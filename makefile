@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2022/12/13 23:02:00 by wkonings      ########   odam.nl          #
+#    Updated: 2022/12/13 23:35:58 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,7 @@ OBJ_BAD		:=	env executor builtins tokens parser
 OBJ_SUB		:=	$(addprefix $(OBJ_DIR)/, $(OBJ_BAD))
 
 INCLUDE_DIR	:= include
-
 INCLUDES	:= libft/libft.a
-HEADERS_DIR	:= include
 INC			:= -I include
 
 # ----------------------------------------- #
@@ -47,35 +45,28 @@ INC			:= -I include
 
 HEADER_FILES:= libft.h
 HEADERS		:=	$(addprefix $(INCLUDE_DIR)/, $(HEADER_FILES))
-
-# MAIN_FILES	:= 
-
-# MAIN_FILES = tolower toupper isprint isascii isalnum isdigit isalpha atoi \
-# 		strncmp strnstr strrchr strchr strlcat strlcpy strlen memcmp \
-# 		memchr memmove memccpy memcpy bzero memset calloc strdup \
-# 		substr strjoin strtrim split itoa strmapi putchar_fd \
-# 		putstr_fd putendl_fd putnbr_fd lstnew lstadd_front lstsize \
-# 		lstlast lstadd_back lstdelone lstclear lstiter lstmap strcmp \
-# 		charinstr strexpand strisnum strchr_num strclean isspace \
-# 		strcontains
 		
 STR_FILES := charinstr split strchr strchr_num strclean strcmp strcontains\
 			 strdup strisnum strjoin strlcat strlcpy strlen strmapi strncmp\
-			 strnstr strrchr substr tolower toupper atoi
+			 strnstr strrchr substr tolower toupper atoi atol
 
-NUM_FILES := itoa
+NUM_FILES := itoa numlen numlen_base numlen_base_unsigned
 
 MEM_FILES := memcmp memchr memmove memccpy memcpy bzero memset calloc
 
 IS_FILES  := isprint isascii isalnum isdigit isalpha isspace
 
-PRINT_FILES := putstr_fd putendl_fd putnbr_fd
+LIST_FILES := lstnew lstadd_front lstsize lstlast lstadd_back lstdelone\
+			  lstclear lstiter lstmap
+
+PRINT_FILES := printf printf_nb printf_print printf_width_precision putstr_fd putendl_fd putnbr_fd
 
 FILES	:=	$(addprefix $(S_STR)/, $(STR_FILES:%=ft_%.c)) \
 			$(addprefix $(S_MEM)/, $(MEM_FILES:%=ft_%.c)) \
 			$(addprefix $(S_PRINT)/, $(PRINT_FILES:%=ft_%.c)) \
 			$(addprefix $(S_IS_X)/, $(IS_FILES:%=ft_%.c)) \
-			$(addprefix $(S_NUM)/, $(NUM_FILES:%=ft_%.c))
+			$(addprefix $(S_NUM)/, $(NUM_FILES:%=ft_%.c)) \
+			$(addprefix $(S_LIST)/, $(LIST_FILES:%=ft_%.c))
 
 SRCS	:=	$(addprefix $(SRC_DIR)/, $(FILES))
 OBJS	:=	$(addprefix $(OBJ_DIR)/, $(FILES:%.c=%.o))
@@ -102,12 +93,13 @@ D_BLUE	:= \1\33[38;5;21m\2
 GREY	:= \1\33[38;5;242m\2
 PURPLE	:= \1\33[38;5;92m\2
 VIOLET	:= \1\33[38;5;183m\2
+
 # ----------------------------------------- #
 # --------------- RECIPES ----------------- #
 # ----------------------------------------- #
 
 
-$(NAME): $(BANNER) $(OBJS) $(HEADERS) | $(BIN_DIR) 
+$(NAME): $(OBJS) $(HEADERS) | $(BIN_DIR)
 	@printf "\n$(BLUE)Compiling $(YELLOW)$(NAME).\n$(END)"
 	@ar rcs $(NAME) $(OBJS)
 	@make pog
@@ -117,7 +109,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS)
 	@mkdir -p $(dir $@)
-	@printf "$(BLUE)Compiling $(D_BLUE)$(notdir $@) $(RESET)from $(PURPLE)$<$(END)\n"
+	@printf "$(BLUE)Compiling $(D_BLUE)$(notdir $@) $(RESET)from $(PURPLE)$(notdir $<)$(END)\n"
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:

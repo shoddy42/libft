@@ -6,26 +6,11 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 21:46:59 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:02:19 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/13 23:25:47 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
-
-static size_t	ft_numlen(long n)
-{
-	size_t	len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
 
 /**
  * @brief Takes an integer and turns it into a string.
@@ -37,7 +22,7 @@ char	*ft_itoa(int n)
 {
 	char	*res;
 	long	nb;
-	size_t	len;
+	int		len;
 
 	nb = n;
 	if (n < 0)

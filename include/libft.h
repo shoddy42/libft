@@ -83,5 +83,6 @@ long	ft_atol(const char *nb);
 size_t	ft_numlen_base_unsigned(unsigned long n, int base);
 size_t	ft_numlen_base(long n, int base);
 int		ft_printf(const char *format, ...);
+int		get_next_line(int fd, char **line);
 
 #endif

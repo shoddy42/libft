@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 21:46:59 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:25:47 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 14:19:09 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		n *= -1;
 	len = ft_numlen(nb) + (n < 0);
-	res = malloc(sizeof(char) * (len + 1));
+	res = ft_calloc(len + 1, sizeof(char));
 	if (!res)
 		return (NULL);
 	res[len] = '\0';

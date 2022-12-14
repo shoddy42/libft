@@ -6,7 +6,7 @@
 /*   By: wkonings <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/16 03:57:38 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 00:06:32 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 14:33:38 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,15 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	char	check;
 	char	*str;
 	size_t	i;
 	size_t	len;
 
-	check = (char)c;
 	str = (char *)s;
-	i = 0;
+	i = -1;
 	len = ft_strlen(str);
-	while (i <= len)
-	{
-		if (str[i] == check)
+	while (++i <= len)
+		if (str[i] == c)
 			return (&str[i]);
-		i++;
-	}
 	return (NULL);
 }

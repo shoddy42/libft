@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 20:33:45 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:07:35 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 14:18:44 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list		*new;
 
-	new = malloc(sizeof(t_list));
+	new = ft_calloc(1, sizeof(t_list));
 	if (!new)
 		return (NULL);
 	if (!content)

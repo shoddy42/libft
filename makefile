@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2022/12/13 23:35:58 by wkonings      ########   odam.nl          #
+#    Updated: 2022/12/14 14:23:33 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ HEADERS		:=	$(addprefix $(INCLUDE_DIR)/, $(HEADER_FILES))
 		
 STR_FILES := charinstr split strchr strchr_num strclean strcmp strcontains\
 			 strdup strisnum strjoin strlcat strlcpy strlen strmapi strncmp\
-			 strnstr strrchr substr tolower toupper atoi atol
+			 strnstr strrchr substr tolower toupper atoi atol strtrimset strtrim
 
 NUM_FILES := itoa numlen numlen_base numlen_base_unsigned
 
@@ -78,7 +78,7 @@ OBJS	:=	$(addprefix $(OBJ_DIR)/, $(FILES:%.c=%.o))
 #Formatting
 RESET	:= \1\33[0m\2
 END		:= \1\33[0m\2\3
-BANNER	:= libft_banner
+BANNER	:= banner
 
 #Colours
 YELLOW	:= \1\33[38;5;220m\2
@@ -105,7 +105,7 @@ $(NAME): $(OBJS) $(HEADERS) | $(BIN_DIR)
 	@make pog
 	@printf "$(PINK)Compilation of $(YELLOW)$(NAME) successful.\n$(END)"
 
-all: $(NAME)
+all: banner $(NAME)
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS)
 	@mkdir -p $(dir $@)
@@ -144,7 +144,7 @@ pog:
 	@printf "⠄⠈⠉⠻⢿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠉\n"
 	@printf "$(END)"
 
-libft_banner:
+banner:
 	@printf "$(YELLOW)"
 	@printf "██╗░░░░░██╗██████╗░███████╗████████╗\n"
 	@printf "██║░░░░░██║██╔══██╗██╔════╝╚══██╔══╝\n"

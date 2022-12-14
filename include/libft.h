@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 11:04:11 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:34:44 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 14:24:24 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int		ft_strchr_num(const char *s, char c);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1);
+char	*ft_strtrimset(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

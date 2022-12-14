@@ -6,7 +6,7 @@
 /*   By: wkonings <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/16 01:31:34 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:12:50 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 16:58:19 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	s = (unsigned char *)src;
 	while (n)
 	{
-		*d++ = *s++;
+		n--;
+		*d = *s;
 		if (*d == check)
 			return (d + 1);
-		n--;
+		d++;
+		s++;
 	}
 	return (NULL);
 }

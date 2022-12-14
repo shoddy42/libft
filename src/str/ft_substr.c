@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 18:07:08 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 14:20:50 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 16:57:16 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) + start)
 		len = ft_strlen(s) - start;
-	str = ft_calloc(len + 1, sizeof(char));
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s + start, len + 1);

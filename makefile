@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2022/12/14 17:26:55 by wkonings      ########   odam.nl          #
+#    Updated: 2022/12/14 19:25:52 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@
 
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
-DEBUG = -g #-fsanitize=address
+CFLAGS	= -w -Wunreachable-code -Ofast
+LIBMLX	= MLX42
+LIBFT	= libft
+DEBUG = #-g #-fsanitize=address
 
 # ---------------------------------------- #
 # --------------- DIRECTORIES ------------ #d
@@ -30,6 +33,7 @@ S_PRINT		:= print
 S_LIST		:= list
 S_MEM		:= mem
 S_NUM		:= num
+S_GNL		:= gnl
 
 OBJ_DIR		:=	obj
 OBJ_BAD		:=	env executor builtins tokens parser
@@ -62,12 +66,15 @@ LIST_FILES := lstnew lstadd_front lstsize lstlast lstadd_back lstdelone\
 
 PRINT_FILES := printf printf_nb printf_print printf_width_precision putstr_fd putendl_fd putnbr_fd
 
+GNL_FILES	:= get_next_line_bonus get_next_line_utils_bonus
+
 FILES	:=	$(addprefix $(S_STR)/, $(STR_FILES:%=ft_%.c)) \
 			$(addprefix $(S_MEM)/, $(MEM_FILES:%=ft_%.c)) \
 			$(addprefix $(S_PRINT)/, $(PRINT_FILES:%=ft_%.c)) \
 			$(addprefix $(S_IS_X)/, $(IS_FILES:%=ft_%.c)) \
 			$(addprefix $(S_NUM)/, $(NUM_FILES:%=ft_%.c)) \
-			$(addprefix $(S_LIST)/, $(LIST_FILES:%=ft_%.c))
+			$(addprefix $(S_GNL)/, $(GNL_FILES:%=%.c)) \
+			$(addprefix $(S_LIST)/, $(LIST_FILES:%=ft_%.c)) \
 
 SRCS	:=	$(addprefix $(SRC_DIR)/, $(FILES))
 OBJS	:=	$(addprefix $(OBJ_DIR)/, $(FILES:%.c=%.o))
@@ -111,7 +118,7 @@ all: banner $(NAME)
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS)
 	@mkdir -p $(dir $@)
 	@printf "$(BLUE)Compiling $(D_BLUE)$(notdir $@) $(RESET)from $(PURPLE)$(notdir $<)$(END)\n"
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@printf "$(YELLOW)Cleaning up!\n$(END)"

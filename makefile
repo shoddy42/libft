@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2022/12/14 15:01:53 by wkonings      ########   odam.nl          #
+#    Updated: 2022/12/14 17:26:55 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,11 +123,8 @@ fclean:	clean
 
 re: fclean all
 
-test: $(NAME)
-	@./$(NAME)
-
 pog:
-	@printf "$(PURPLE)"
+	@printf "\n$(PURPLE)"
 	@printf "⣿⣿⣿⣿⡿⠟⠛⠛⠛⠛⠉⠉⠙⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠟\n"
 	@printf "⣿⣿⣯⣥⣤⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣏⣀⣀⣀⡀\n"
 	@printf "⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠛⠻⠿⠟⠉⠉⠉⢻⣿⣿⣿⡿⠟⠋⣡⣼⣿⣿⣿⡄\n"
@@ -146,7 +143,7 @@ pog:
 	@printf "$(END)"
 
 banner:
-	@printf "$(YELLOW)"
+	@printf "\n$(YELLOW)"
 	@printf "██╗░░░░░██╗██████╗░███████╗████████╗\n"
 	@printf "██║░░░░░██║██╔══██╗██╔════╝╚══██╔══╝\n"
 	@printf "██║░░░░░██║██████╦╝█████╗░░░░░██║░░░\n"
@@ -155,4 +152,4 @@ banner:
 	@printf "╚══════╝╚═╝╚═════╝░╚═╝░░░░░░░░╚═╝░░░\n"
 	@printf "$(END)"
 
-.PHONY: all clean fclean re test banner pog
+.PHONY: all clean fclean re banner pog

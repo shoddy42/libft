@@ -6,7 +6,7 @@
 /*   By: wkonings <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/16 01:31:34 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 16:58:19 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 17:07:02 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,3 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	}
 	return (NULL);
 }
-		// d++;
-		// s++;

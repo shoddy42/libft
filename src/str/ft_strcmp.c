@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/05 17:20:38 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 14:39:44 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/14 14:40:38 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t			i;
+	size_t	i;
 
 	i = -1;
 	while (s1[++i] || s2[i])

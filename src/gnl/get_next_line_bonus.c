@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 11:59:59 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 19:31:56 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 19:46:18 by root          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	handle_final(char **buff, char **line, int fd, int ret)
 {
-	int		i;
-
-	i = 0;
 	if (buff[fd])
 		*line = gnl_strdup_opt(buff[fd], 1, 0, 0);
 	if (!line)

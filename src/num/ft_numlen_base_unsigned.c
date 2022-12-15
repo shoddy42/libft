@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/13 23:32:40 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:32:53 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 19:45:46 by root          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ size_t	ft_numlen_base_unsigned(unsigned long n, int base)
 	len = 0;
 	if (n <= 0)
 		len = 1;
-	if (n < 0)
-		n *= -1;
 	while (n > 0)
 	{
 		n /= base;

@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 16:50:47 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:47:24 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 19:59:03 by root          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ void	ft_print_char(va_list args, t_printf *mem)
 
 void	ft_print_percent(va_list args, t_printf *mem)
 {
-	int	waste_of_time_and_space;
-
 	if (!args)
-		waste_of_time_and_space = 1;
+		args = NULL;
 	if (mem->minus == 0 && mem->zero == 0 && 1 < mem->width)
 		pad_width(mem, 1, ' ', 0);
 	if (mem->minus == 0 && mem->zero == 1 && 1 < mem->width)

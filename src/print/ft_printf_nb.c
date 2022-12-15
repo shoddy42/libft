@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/11 23:00:13 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:47:01 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 19:56:41 by root          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_print_uint(va_list args, t_printf *mem)
 	if (mem->minus == 0 && mem->zero == 1 && len < mem->width)
 		pad_width(mem, len, '0', 0);
 	if (len < mem->precision)
-		pad_prec(mem, len, '0', (nb < 0));
+		pad_prec(mem, len, '0', 0);
 	if (!(nb == 0 && mem->has_p == 1 && mem->precision == 0))
 		mem->printed += ft_putnbr_base(nb, 10, 0, mem);
 	if (mem->minus == 1 && len < mem->width)
@@ -72,17 +72,15 @@ void	ft_print_hex(va_list args, t_printf *mem)
 	if (mem->minus == 1 || mem->has_p == 1)
 		mem->zero = 0;
 	if (mem->minus == 0 && mem->zero == 0 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
-	if (nb < 0)
-		write(mem->fd, "-", 1);
+		pad_width(mem, len, ' ', 0);
 	if (mem->minus == 0 && mem->zero == 1 && len < mem->width)
-		pad_width(mem, len, '0', (nb < 0));
+		pad_width(mem, len, '0', 0);
 	if (len < mem->precision)
-		pad_prec(mem, len, '0', (nb < 0));
+		pad_prec(mem, len, '0', 0);
 	if (!(nb == 0 && mem->has_p == 1 && mem->precision == 0))
-		mem->printed += ft_putnbr_base(nb, 16, 16, mem) + (nb < 0);
+		mem->printed += ft_putnbr_base(nb, 16, 16, mem);
 	if (mem->minus == 1 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
+		pad_width(mem, len, ' ', 0);
 }
 
 void	ft_print_uhex(va_list args, t_printf *mem)
@@ -97,17 +95,15 @@ void	ft_print_uhex(va_list args, t_printf *mem)
 	if (mem->minus == 1 || mem->has_p == 1)
 		mem->zero = 0;
 	if (mem->minus == 0 && mem->zero == 0 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
-	if (nb < 0)
-		write(mem->fd, "-", 1);
+		pad_width(mem, len, ' ', 0);
 	if (mem->minus == 0 && mem->zero == 1 && len < mem->width)
-		pad_width(mem, len, '0', (nb < 0));
+		pad_width(mem, len, '0', 0);
 	if (len < mem->precision)
-		pad_prec(mem, len, '0', (nb < 0));
+		pad_prec(mem, len, '0', 0);
 	if (!(nb == 0 && mem->has_p == 1 && mem->precision == 0))
-		mem->printed += ft_putnbr_base_unsigned(nb, 16, 0, mem) + (nb < 0);
+		mem->printed += ft_putnbr_base_unsigned(nb, 16, 0, mem);
 	if (mem->minus == 1 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
+		pad_width(mem, len, ' ', 0);
 }
 
 void	ft_print_pointer(va_list args, t_printf *mem)
@@ -124,14 +120,14 @@ void	ft_print_pointer(va_list args, t_printf *mem)
 	if (mem->minus == 1 || mem->has_p == 1)
 		mem->zero = 0;
 	if (mem->minus == 0 && mem->zero == 0 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
+		pad_width(mem, len, ' ', 0);
 	if (mem->minus == 0 && mem->zero == 1 && len < mem->width)
-		pad_width(mem, len, '0', (nb < 0));
+		pad_width(mem, len, '0', 0);
 	if (len < mem->precision)
-		pad_prec(mem, len, '0', (nb < 0));
+		pad_prec(mem, len, '0', 0);
 	mem->printed += write(mem->fd, "0x", 2);
 	if (!(nb == 0 && mem->has_p == 1 && mem->precision == 0))
-		mem->printed += ft_putnbr_base_unsigned(nb, 16, 16, mem) + (nb < 0);
+		mem->printed += ft_putnbr_base_unsigned(nb, 16, 16, mem);
 	if (mem->minus == 1 && len < mem->width)
-		pad_width(mem, len, ' ', (nb < 0));
+		pad_width(mem, len, ' ', 0);
 }

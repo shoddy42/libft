@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/09 21:36:55 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/13 23:42:30 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 19:42:45 by root          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	t_printf	mem;
-	int			ret;
 
 	mem.printed = 0;
 	mem.i = 0;
@@ -90,6 +89,5 @@ int	ft_printf(const char *format, ...)
 		set_printf(&mem);
 	}
 	va_end(args);
-	ret = mem.printed;
 	return (mem.printed);
 }

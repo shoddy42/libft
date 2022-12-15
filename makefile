@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2022/12/14 19:25:52 by wkonings      ########   odam.nl          #
+#    Updated: 2022/12/15 14:36:27 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ HEADERS		:=	$(addprefix $(INCLUDE_DIR)/, $(HEADER_FILES))
 STR_FILES := charinstr split strchr strchr_num strclean strcmp strcontains\
 			 strdup strisnum strjoin strlcat strlcpy strlen strmapi strncmp\
 			 strnstr strrchr substr tolower toupper atoi atol strtrimset strtrim\
-			 strexpand
+			 strexpand atod atof
 
 NUM_FILES := itoa numlen numlen_base numlen_base_unsigned
 

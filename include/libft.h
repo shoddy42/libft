@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 11:04:11 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/14 14:24:24 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/15 14:35:43 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,7 @@ size_t	ft_numlen_base_unsigned(unsigned long n, int base);
 size_t	ft_numlen_base(long n, int base);
 int		ft_printf(const char *format, ...);
 int		get_next_line(int fd, char **line);
+double	ft_atod(const char *nb);
+float	ft_atof(const char *nb);
 
 #endif

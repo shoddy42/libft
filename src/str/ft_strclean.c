@@ -6,12 +6,12 @@
 /*   By: root <root@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/20 15:21:40 by root          #+#    #+#                 */
-/*   Updated: 2022/12/14 14:40:46 by wkonings      ########   odam.nl         */
+/*   Updated: 2023/01/18 19:09:16 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
-#include <stdio.h>
+
 /**
  * @brief Copies @b [s], but removes all characters from @b [remove].
  * 

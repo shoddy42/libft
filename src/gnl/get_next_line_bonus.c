@@ -6,11 +6,12 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 11:59:59 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/15 19:46:18 by root          ########   odam.nl         */
+/*   Updated: 2023/01/18 19:23:10 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/get_next_line_bonus.h"
+#include "../../include/libft.h"
 
 int	handle_final(char **buff, char **line, int fd, int ret)
 {
@@ -23,6 +24,8 @@ int	handle_final(char **buff, char **line, int fd, int ret)
 		free(buff[fd]);
 		buff[fd] = NULL;
 	}
+	if (ft_strlen(*line) > 0)
+		return (ft_strlen(*line));
 	return (ret);
 }
 

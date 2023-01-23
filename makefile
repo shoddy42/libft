@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2023/01/18 19:07:42 by wkonings      ########   odam.nl          #
+#    Updated: 2023/01/23 02:56:57 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,9 +113,9 @@ $(NAME): $(OBJS) $(HEADERS) | $(BIN_DIR)
 	@make pog
 	@printf "$(PINK)Compilation of $(YELLOW)$(NAME) successful.\n$(END)"
 
-all: banner $(NAME)
+all: $(NAME)
 
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS)
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS) $(BANNER)
 	@mkdir -p $(dir $@)
 	@printf "$(BLUE)Compiling $(D_BLUE)$(notdir $@) $(RESET)from $(PURPLE)$(notdir $<)$(END)\n"
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@

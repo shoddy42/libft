@@ -6,7 +6,7 @@
 #    By: wkonings <wkonings@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 16:21:56 by wkonings      #+#    #+#                  #
-#    Updated: 2023/02/07 23:31:42 by wkonings      ########   odam.nl          #
+#    Updated: 2023/02/07 23:33:02 by wkonings      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,12 +121,12 @@ $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(HEADERS) $(BANNER)
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	@printf "$(YELLOW)Cleaning up!\n$(END)"
+	@printf "$(YELLOW)Cleaning up! $(RESET)$(LIBFT)\n$(END)"
 	/bin/rm -rf $(OBJ_DIR)
 
 fclean:	clean
 	/bin/rm -f $(NAME)
-	@printf "$(L_BLUE)Fully clean\n$(END)"
+	@printf "$(L_BLUE)Fully cleaned $(RESET)$(LIBFT)\n$(END)"
 
 re: fclean all
 

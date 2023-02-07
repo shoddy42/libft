@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 11:04:11 by wkonings      #+#    #+#                 */
-/*   Updated: 2023/01/18 19:10:12 by wkonings      ########   odam.nl         */
+/*   Updated: 2023/02/07 23:31:19 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 bool	ft_charinstr(char c, const char *str);
+bool	ft_strcomply(char *str, char *allowed);
 
 char	*ft_strexpand(char *str, char const *expand);
 char	*ft_strclean(const char *s, const char *remove);

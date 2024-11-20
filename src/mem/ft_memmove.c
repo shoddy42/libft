@@ -15,21 +15,21 @@
 /**
  * @brief 
  * 
- * @param dst 
- * @param src 
- * @param n 
- * @return void* 
+ * @param dst the destination to copy to
+ * @param src the source to copy from
+ * @param n   number of bytes to copy
+ * @return    returns dst, after having the memory copied
  */
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-
 	if (!dst && !src)
 		return (NULL);
 	if (dst < src)
 		return (ft_memcpy(dst, src, n));
-	i = -1;
-	while (++i < n)
-		((unsigned char *)dst)[n - i] = ((unsigned char *)src)[n - i];
+	while (n)
+	{
+		n--;
+		((unsigned char *)dst)[n] = ((unsigned char *)src)[n];
+	}
 	return (dst);
 }

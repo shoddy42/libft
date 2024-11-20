@@ -14,7 +14,7 @@
 
 /**
  * @brief Checks if a given character is a
- * 			 ' ', '\t', '\n', '\v' '\f' '\r' 
+ *  space, tab, newline, vertical tab or carriage return
  * 
  * @param c	The character to check.
  * @returns	@b [true] if it is a "space", or @b [false] if not.	

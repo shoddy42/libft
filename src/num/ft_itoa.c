@@ -25,8 +25,8 @@ char	*ft_itoa(int n)
 	int		len;
 
 	nb = n;
-	if (n < 0)
-		n *= -1;
+	if (nb < 0)
+		nb *= -1;
 	len = ft_numlen(nb) + (n < 0);
 	res = ft_calloc(len + 1, sizeof(char));
 	if (!res)
